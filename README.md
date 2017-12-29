@@ -1,3 +1,3 @@
-# Project Pierre FrontEnd
+# Project Pierre
 
 React App for Pierre's dev project.
