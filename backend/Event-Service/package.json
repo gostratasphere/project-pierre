@@ -1,0 +1,7 @@
+{
+  "name": "event-service",
+  "dependencies": {
+    "aws-sdk": "^2.175.0",
+    "uuid": "^3.1.0"
+  }
+}

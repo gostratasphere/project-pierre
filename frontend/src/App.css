@@ -26,3 +26,24 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.new-event-form {
+  margin: 20px 20px 20px 20px;
+  text-align: left;
+  width:300px;
+}
+
+.new-event-form > input, textarea {
+  width: 100%;
+  margin: 15px 0 15px 0;
+  padding:8px;
+}
+
+.new-event-form > textarea {
+  /*resize: none*/
+}
+
+.new-event-form > label {
+  display:block;
+}
