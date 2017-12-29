@@ -1,3 +1,5 @@
 # Project Pierre
 
-React App for Pierre's dev project.
+Front-end App for Pierre's dev project in React.
+
+Back-end in AWS on Serverless framework. 
