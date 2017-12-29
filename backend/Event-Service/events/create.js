@@ -8,16 +8,22 @@ module.exports.create = (event, context, callback) => {
 	console.log(event.body);
 	const data = JSON.parse(event.body);
 
-	if (typeof data.text !== 'string') {
-		console.error('Validation Failed');
-		callback(new Error('Couldn\'t create the event'));
-		return; 
-	}
+	// validations
+	
+	// if (typeof data.name !== 'string') {
+	// 	console.error('Validation Failed');
+	// 	callback(new Error('Couldn\'t create the event'));
+	// 	return; 
+	// }
+
 	const params = {
 		TableName: 'events',
 		Item: {
 			id: uuid.v1(),
-			text: data.text,
+			name: data.Item.name,
+			description: data.Item.description,
+			date: data.Item.date,
+			owner: data.Item.owner,
 			checked: false,
 			createdAt: timestamp,
 			updatedAt: timestamp
@@ -33,7 +39,7 @@ module.exports.create = (event, context, callback) => {
 
 		const response = {
 			statusCode: 200,
-			body: JSON.stringify(result).my = 'hllo'
+			body: JSON.stringify(result.Item)
 		}
 		callback(null, response);
 	})
