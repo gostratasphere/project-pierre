@@ -40,6 +40,12 @@
   padding:8px;
 }
 
+.dpicker {
+  width: 100%;
+  margin: 15px 0 15px 0;
+  padding:8px;
+}
+
 .new-event-form > textarea {
   /*resize: none*/
 }

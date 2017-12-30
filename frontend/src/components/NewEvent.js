@@ -89,7 +89,7 @@ class NewEvent extends Component {
         <label>Description:</label>
         <textarea type="text" name="event-description" value={this.state.description} maxLength="256" onChange={this.handleChange}></textarea>
         <label>Date:</label>
-        <DatePicker selected={this.state.date} onChange={this.handleChange} />
+        <DatePicker className='dpicker' selected={this.state.date} onChange={this.handleChange} />
         <button name="new-event-button" onClick={this.createEvent}>Create Event</button>
       </div>)
   }

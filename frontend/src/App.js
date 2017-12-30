@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import NewEvent from './components/NewEvent.js';
+import EventList from './components/EventList.js';
+
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 
 // eventually move these service consts to Lambda Environment variables
@@ -9,9 +12,12 @@ import NewEvent from './components/NewEvent.js';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <NewEvent name="sheamus" />
-      </div>
+      <Router>
+        <div className="App">
+          <Route exact path="/" component={NewEvent}/>
+          <Route path="/list" component={EventList}/>
+        </div>
+      </Router>
     );
   }
 }
