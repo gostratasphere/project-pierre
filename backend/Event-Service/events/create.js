@@ -5,13 +5,15 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 module.exports.create = (event, context, callback) => {
 	const timestamp = new Date().getTime();
-	console.log(event.body);
-	const data = JSON.parse(event.body);
+	console.log(typeof event);
+	console.log(event);
+	const data = (typeof event.body == 'string') ? JSON.parse(event.body) : event.body; // actual requests from API gateway come in as strings -- tests from the lambda dashboard come in as objects. This prevents an error if you use either.
 
 	// validations
-	
+	console.log(typeof data.Item.date);
+
 	if (typeof data.Item.name !== 'string' || typeof data.Item.description !== 'string' ||
-		typeof data.Item.date !== 'number' || typeof data.Item.owner !== 'string') {
+		typeof data.Item.date !== 'string' || typeof data.Item.owner !== 'string') {
 		console.error('Validation Failed - wrong type for submitted data');
 		callback(new Error('Invalid data type'));
 		return; 
@@ -31,16 +33,21 @@ module.exports.create = (event, context, callback) => {
 		}
 	}
 
-	dynamoDb.put(params, (error, result) => {
+	dynamoDb.put(params, (error, data) => {
 		if (error) {
 			console.error(error);
 			callback(new Error('Couldn\'t create the event'));
 			return;
 		}
+		console.log(data);
 
 		const response = {
 			statusCode: 200,
-			body: JSON.stringify(result.Item)
+			 headers: {
+        "Access-Control-Allow-Origin" : "*" // Required for CORS support to work
+        //"Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+      },
+			body: JSON.stringify({'message': 'You did it!'})
 		}
 		callback(null, response);
 	})
