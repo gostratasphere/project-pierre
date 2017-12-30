@@ -73,6 +73,7 @@ class NewEvent extends Component {
             console.log(json);
           });
         }
+        this.setState({name: '', owner: '', description: '', date: null})
       }).catch(err => {
         console.error(err);
       })

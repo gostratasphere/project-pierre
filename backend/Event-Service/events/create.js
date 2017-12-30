@@ -1,7 +1,7 @@
 'use strict';
 const AWS = require('aws-sdk');
 const uuid = require('uuid');
-// const moment = require('moment');
+// const moment = require('moment'); // may need this later if we want lambdaside logic for processing moment
 
 const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
@@ -43,16 +43,23 @@ module.exports.create = (event, context, callback) => {
 	}
 
 	dynamoDb.put(params, (error, data) => {
+		let response;
 		if (error) {
 			console.error(error);
-			callback(new Error('Couldn\'t create the event'));
-			return;
+			response = {
+				statusCode: 200,
+				headers: {
+					"Access-Control-Allow-Origin" : "*"
+				},
+				body: JSON.stringify({"message": "Unfortunately there was a database error", "error": error})
+			}
+			callback(new Error('Couldn\'t create the event'), response);
 		}
 		console.log(data);
 
-		const response = {
+		response = {
 			statusCode: 200,
-			 headers: {
+			headers: {
         "Access-Control-Allow-Origin" : "*" // Required for CORS support to work
         //"Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
       },
