@@ -4,6 +4,8 @@ import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
+// eventually move these service consts to Lambda Environment variables
+// that load into the js before html gets sent to the browser
 const EVENT_SERVICE = 'https://twmzjfszkj.execute-api.us-east-1.amazonaws.com/dev/events';
 const OWNER = 'Pierre';
 
