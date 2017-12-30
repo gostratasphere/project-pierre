@@ -2,6 +2,7 @@
   "name": "event-service",
   "dependencies": {
     "aws-sdk": "^2.175.0",
+    "moment": "^2.20.1",
     "uuid": "^3.1.0"
   }
 }
