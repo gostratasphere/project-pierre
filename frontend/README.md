@@ -1,3 +1,7 @@
+## Setup Instructions (Stratasphere)
+
+In order to get this frontend running, please make sure git clone the directory and then run npm install from within the repository.  This will create a local copy that you can develop against.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
