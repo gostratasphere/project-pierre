@@ -24,7 +24,6 @@ class EventList extends Component {
 			</div>
 		)
 	}
-	
 }
 
 class EventRow extends Component {
