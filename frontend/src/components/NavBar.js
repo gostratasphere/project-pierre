@@ -7,6 +7,9 @@ export default class NavBar extends Component {
   handleItemClick = (e, { name }) => {
     this.setState({ activeItem: name });
     console.log(name);
+    if (name === 'login') {
+    	window.location.href = '/';
+    }
     if (name === 'events') {
       window.location.href = '/list';
     } 

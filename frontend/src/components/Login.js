@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
-import { Button, Input } from 'semantic-ui-react'
+import { Button, Input, Container } from 'semantic-ui-react'
+
 
 class Login extends Component {
   constructor (props) {
@@ -56,17 +57,19 @@ class Login extends Component {
 
   render () {
     return (
-      <div className='login-form'>
-        <h2>Login</h2>
-        <label>Username: </label>
-        <Input name='username' className='loginInput' onChange={this.handleChange} value={this.state.username} />
-        <label>Password: </label>
-        <Input name='password' className='loginInput' type='password' onChange={this.handleChange} value={this.state.password} />
-        <Button name='submit' className='loginButton' onClick={this.submitLogin}>login</Button>
-        <div id='notify-message' className={this.state.messageClass}>
-          {this.state.message}
-        </div>
-      </div>
+      <Container centered>
+
+          <h2>Login</h2>
+          <label>Username: </label>
+          <Input name='username' className='loginInput' onChange={this.handleChange} value={this.state.username} />
+          <label>Password: </label>
+          <Input name='password' className='loginInput' type='password' onChange={this.handleChange} value={this.state.password} />
+          <Button name='submit' className='loginButton' onClick={this.submitLogin}>login</Button>
+          <div id='notify-message' className={this.state.messageClass}>
+            {this.state.message}
+          </div>
+
+      </Container>
     )
   }
 }
