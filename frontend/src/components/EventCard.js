@@ -9,7 +9,7 @@ class EventCard extends Component {
 	}
 
 	componentWillMount(){
-		if(this.props.match.params.id) {  //check if there is a router param
+		if(this.props.match && this.props.match.params.id) {  //check if there is a router param
 			console.log(this.props.match.params.id);
 		}
 	}
