@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Login from './components/Login.js';
 import NewEvent from './components/NewEvent.js';
 import EventList from './components/EventList.js';
 
@@ -12,7 +13,8 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={NewEvent}/>
+          <Route exact path="/" component={Login}/>
+          <Route exact path="/new-event" component={NewEvent}/>
           <Route path="/list" component={EventList}/>
         </div>
       </Router>
