@@ -38,6 +38,10 @@ class NewEvent extends Component {
     } else if (event._isAMomentObject) {
       this.setState({date:event});
     }
+    
+  }
+
+  componentDidUpdate(){
     console.log(this.state);
   }
 
