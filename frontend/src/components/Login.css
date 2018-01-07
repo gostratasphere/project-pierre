@@ -6,13 +6,26 @@
 
 }
 
-.login-form > input {
+/*.login-form > input {
   font-size:13px;
   display:block;
   margin:auto;
   margin-bottom:10px;
   padding: 10px;
   width: 95%;
+}*/
+
+.loginInput {
+  display:block;
+  width:100%;
+  margin-bottom:10px;
+}
+
+.loginButton {
+  display:block;
+  width:100%;
+  margin:30px;
+  padding:40px;
 }
 
 .login-form > label {
