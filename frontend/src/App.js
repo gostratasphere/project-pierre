@@ -3,6 +3,7 @@ import './App.css';
 import Login from './components/Login.js';
 import NewEvent from './components/NewEvent.js';
 import EventList from './components/EventList.js';
+import EventCard from './components/EventCard.js';
 import 'semantic-ui-css/semantic.min.css';
 
 
@@ -19,6 +20,7 @@ class App extends Component {
           <Route exact path="/" component={Login}/>
           <Route exact path="/new-event" component={NewEvent}/>
           <Route path="/list" component={EventList}/>
+          <Route path="/event/:id" component={EventCard}/>
         </div>
       </Router>
     );
