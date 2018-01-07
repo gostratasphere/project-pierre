@@ -9,6 +9,8 @@ class EventList extends Component {
   generateRows(){
   	let data = [['my Event', 'Jan 2'], ['Party', 'Feb 20']]
   	let rows = [];
+  	const {value} = 'hello';
+  	console.log({value});
   	data.map((i)=> {
   		rows.push(<EventRow eventName={i[0]} eventDate={i[1]}></EventRow>);
   	})
@@ -30,9 +32,11 @@ class EventRow extends Component {
 		super(props);
 		this.state = {}
 	}
+
 	componentWillMount(){
 		console.log(this.props)
 	}
+
 	render(){
 		return (
 			<div>{this.props.eventName} {this.props.eventDate}</div>

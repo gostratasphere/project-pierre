@@ -23,14 +23,14 @@
   text-align: left;
 }
 
-.login-form > button {
+/*.login-form > button {
   font-size: 12px;
   margin:auto;
   display: block;
   height: 30px;
   margin-top: 30px;
   width: 95%;
-}
+}*/
 
 .success {
   color: green;

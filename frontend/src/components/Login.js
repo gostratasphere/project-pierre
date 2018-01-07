@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
+import { Button } from 'semantic-ui-react'
 
 class Login extends Component {
   constructor (props) {
@@ -61,7 +62,7 @@ class Login extends Component {
         <input name='username' onChange={this.handleChange} value={this.state.username} />
         <label>Password: </label>
         <input name='password' type='password' onChange={this.handleChange} value={this.state.password} />
-        <button name='submit' onClick={this.submitLogin}>login</button>
+        <Button name='submit' onClick={this.submitLogin}>login</Button>
         <div id='notify-message' className={this.state.messageClass}>
           {this.state.message}
         </div>
