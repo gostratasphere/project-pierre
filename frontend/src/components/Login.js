@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import './Login.css'
+import React, { Component } from 'react';
+import './Login.css';
 
 class Login extends Component {
   constructor (props) {
-    super(props)
-    this.state = {}
-    this.handleChange = this.handleChange.bind(this)
-    this.submitLogin = this.submitLogin.bind(this)
+    super(props);
+    this.state = {};
+    this.handleChange = this.handleChange.bind(this);
+    this.submitLogin = this.submitLogin.bind(this);
   }
 
   componentWillMount () {
@@ -15,22 +15,22 @@ class Login extends Component {
       password: '',
       message: '',
       messageClass: ''
-    })
+    });
   }
 
   submitLogin () {
     let that = this
     if (this.state.username && this.state.password) {
-      console.log(this.state.username)
-      console.log(this.state.password)
-      this.setState({username: '', password: '', message: 'success', messageClass: 'success'})
+      console.log(this.state.username);
+      console.log(this.state.password);
+      this.setState({username: '', password: '', message: 'success', messageClass: 'success'});
       // console.log(this.getState('password'))
     } else {
-      console.log('username or password are blank')
-      this.setState({message: 'failure', messageClass: 'failure'})
+      console.log('username or password are blank');
+      this.setState({message: 'failure', messageClass: 'failure'});
     }
     window.setTimeout(function () {
-      that.setState({message: ''})
+      that.setState({message: ''});
     }, 2000)
   }
 
@@ -38,16 +38,16 @@ class Login extends Component {
     console.log(event)
     if (event.target) {
       if (event.target.name === 'username') {
-        this.setState({username: event.target.value})
+        this.setState({username: event.target.value});
       }
       if (event.target.name === 'password') {
-        this.setState({password: event.target.value})
+        this.setState({password: event.target.value});
       }
     }
   }
 
   componentDidUpdate () {
-    console.log(this.state)
+    console.log(this.state);
   }
 
   render () {
