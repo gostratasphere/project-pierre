@@ -15,7 +15,7 @@ class EventCard extends Component {
 	}
 
 	componentDidMount(){
-		
+
 	}
 
 	render(){
@@ -36,7 +36,7 @@ class EventCard extends Component {
 					</Card.Description>
 					
 				</Card.Content>
-			<Button basic color='green'>Attendees</Button>
+			<Button basic color='green'>Administer Event</Button>
 			</Card>
 			)
 	}
