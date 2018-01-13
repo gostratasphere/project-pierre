@@ -41,13 +41,11 @@ class Login extends Component {
   }
 
   handleChange (event) {
-    if (event.target) {
-      if (event.target.name === 'username') {
-        this.setState({username: event.target.value});
-      }
-      if (event.target.name === 'password') {
-        this.setState({password: event.target.value});
-      }
+    if (event.target.name === 'username') {
+      this.setState({username: event.target.value});
+    }
+    if (event.target.name === 'password') {
+      this.setState({password: event.target.value});
     }
   }
 
@@ -60,7 +58,6 @@ class Login extends Component {
       <Container centered>
           <br />
           <h1><Icon name='user' color='grey' />Login</h1>
-          
           <Input name='username' label='Username' className='loginInput' onChange={this.handleChange} value={this.state.username} />
           <Input name='password' label='Password' className='loginInput' type='password' onChange={this.handleChange} value={this.state.password} />
           <Button name='submit' className='loginButton' onClick={this.submitLogin}>Submit</Button>
