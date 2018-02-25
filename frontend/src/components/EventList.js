@@ -31,6 +31,7 @@ class EventList extends Component {
 
   generateRows(){
   	let rows = [];
+  	let activeEvents;
   	// let data = [['Unicorn Herders Conference', 'A gathering of the brightest minds in mythological husbandry', 'Jan 21'],
   	// 						['Quantum Wormhole Ice Cream Social', 'Gathering of Friends of the Society for Advanced Physical Systems. No Ultimate Frisbee this time.', 'Feb 20'],
   	// 						['Ubiquitous Presence Roundtable', 'An unconference for teleheads, pundits, and social misfits', 'Oct 22'],
@@ -38,11 +39,32 @@ class EventList extends Component {
   	// data.map((i)=> {
   	// 	rows.push(<EventRow eventName={i[0]} eventDescription={i[1]} eventDate={i[2]}></EventRow>);
   	// })
-  	this.state.events.map(i => {
+  	
+  	activeEvents = removeOldEvents(this.state.events);
+  	activeEvents.sort((a, b) => {
+  		if (new Date(a[2]) < new Date(b[2])){
+  			return -1
+  		} else if (new Date(a[2]) > new Date(b[2])){
+  			return 1
+  		} else {
+  			return 0
+  		}
+  	})
+  	activeEvents.map(i => {
   		rows.push(<EventRow eventName={i[0]} eventDescription={i[1]} eventDate={i[2]}></EventRow>)
   	})
-  	return rows;
   	
+  	return rows;
+
+  	function removeOldEvents(arr){
+  		let activeEvents = []
+  		arr.map(i => {
+  			if (new Date(i[2]) >= new Date()) {
+  				activeEvents.push(i)
+  			}
+  		});
+  		return activeEvents;
+  	}
   }
 
 	render() {
