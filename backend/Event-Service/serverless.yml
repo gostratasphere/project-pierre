@@ -42,12 +42,18 @@ resources:
       Properties:
         AttributeDefinitions:
           -
+            AttributeName: event_owner
+            AttributeType: S
+          -
             AttributeName: id
             AttributeType: S
         KeySchema:
           -
-            AttributeName: id
+            AttributeName: event_owner
             KeyType: HASH
+          -
+            AttributeName: id
+            KeyType: RANGE
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1

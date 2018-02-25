@@ -12,12 +12,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 class App extends Component {
   render() {
     return (
+
       <Router>
+
         <div className="App">
           <NavBar />
           <Route exact path="/" component={Login}/>
           <Route exact path="/new-event" component={NewEvent}/>
-          <Route path="/list" component={EventList}/>
+          <Route path="/events" component={EventList}/>
           <Route path="/event/:id" component={EventCard}/>
         </div>
       </Router>

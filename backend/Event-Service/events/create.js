@@ -35,7 +35,7 @@ module.exports.create = (event, context, callback) => {
 			name: data.Item.name,
 			description: data.Item.description,
 			date: data.Item.date,
-			owner: data.Item.owner,
+			event_owner: data.Item.owner,
 			checked: false,
 			createdAt: timestamp,
 			updatedAt: timestamp

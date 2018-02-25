@@ -11,7 +11,7 @@ export default class NavBar extends Component {
     	window.location.href = '/';
     }
     if (name === 'events') {
-      window.location.href = '/list';
+      window.location.href = '/events';
     } 
   }
 
