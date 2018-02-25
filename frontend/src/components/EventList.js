@@ -36,6 +36,7 @@ class EventList extends Component {
   							['Omnidirectional Antennae Dialectic', 'Twice yearly multi-threaded conversation on the nature of being in a universe that listens.', 'March 4']]
   	let rows = [];
 
+  	// eslint-disable-next-line
   	data.map((i)=> {
   		rows.push(<EventRow eventName={i[0]} eventDescription={i[1]} eventDate={i[2]}></EventRow>);
   	})

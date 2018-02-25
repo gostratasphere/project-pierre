@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
-import { Button, Input, Container, Label } from 'semantic-ui-react'
+import { Button, Icon, Input, Container } from 'semantic-ui-react'
 
 
 class Login extends Component {
@@ -41,13 +41,11 @@ class Login extends Component {
   }
 
   handleChange (event) {
-    if (event.target) {
-      if (event.target.name === 'username') {
-        this.setState({username: event.target.value});
-      }
-      if (event.target.name === 'password') {
-        this.setState({password: event.target.value});
-      }
+    if (event.target.name === 'username') {
+      this.setState({username: event.target.value});
+    }
+    if (event.target.name === 'password') {
+      this.setState({password: event.target.value});
     }
   }
 
@@ -58,13 +56,11 @@ class Login extends Component {
   render () {
     return (
       <Container centered>
-
-          <h2>Login</h2>
-          <Label>Username: </Label>
-          <Input name='username' className='loginInput' onChange={this.handleChange} value={this.state.username} />
-          <Label>Password: </Label>
-          <Input name='password' className='loginInput' type='password' onChange={this.handleChange} value={this.state.password} />
-          <Button name='submit' className='loginButton' onClick={this.submitLogin}>login</Button>
+          <br />
+          <h1><Icon name='user' color='grey' />Login</h1>
+          <Input name='username' label='Username' className='loginInput' onChange={this.handleChange} value={this.state.username} />
+          <Input name='password' label='Password' className='loginInput' type='password' onChange={this.handleChange} value={this.state.password} />
+          <Button name='submit' className='loginButton' onClick={this.submitLogin}>Submit</Button>
           <div id='notify-message' className={this.state.messageClass}>
             {this.state.message}
           </div>

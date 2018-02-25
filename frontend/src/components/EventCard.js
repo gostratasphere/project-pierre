@@ -5,7 +5,7 @@ import { Card, Button } from 'semantic-ui-react'
 class EventCard extends Component {
 	constructor(props){
 		super(props);
-		
+		this.state = {};
 	}
 
 	componentWillMount(){
