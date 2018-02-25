@@ -55,7 +55,7 @@ class Login extends Component {
 
   render () {
     return (
-      <Container centered>
+      <Container centered="true">
           <br />
           <h1><Icon name='user' color='grey' />Login</h1>
           <Input name='username' label='Username' className='loginInput' onChange={this.handleChange} value={this.state.username} />
