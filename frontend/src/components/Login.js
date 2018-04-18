@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
-import { Button, Icon, Input, Container } from 'semantic-ui-react'
+import { Button, Icon, Input, Segment, Grid } from 'semantic-ui-react'
 
 
 class Login extends Component {
@@ -55,17 +55,17 @@ class Login extends Component {
 
   render () {
     return (
-      <Container centered="true">
-          <br />
-          <h1><Icon name='user' color='grey' />Login</h1>
-          <Input name='username' label='Username' className='loginInput' onChange={this.handleChange} value={this.state.username} />
-          <Input name='password' label='Password' className='loginInput' type='password' onChange={this.handleChange} value={this.state.password} />
-          <Button name='submit' className='loginButton' onClick={this.submitLogin}>Submit</Button>
-          <div id='notify-message' className={this.state.messageClass}>
-            {this.state.message}
-          </div>
-
-      </Container>
+      <Grid centered>
+        <Segment basic centered='true'>
+            <h1><Icon name='user' color='grey' />Login</h1>
+            <Input inline size='big' name='username' label='Username' className='loginInput' onChange={this.handleChange} value={this.state.username} />
+            <Input inline size='big' name='password' label='Password' className='loginInput' type='password' onChange={this.handleChange} value={this.state.password} />
+            <Button size='big' name='submit' className='loginButton' onClick={this.submitLogin}>Submit</Button>
+            <div id='notify-message' className={this.state.messageClass}>
+              {this.state.message}
+            </div>
+        </Segment>
+      </Grid>
     )
   }
 }

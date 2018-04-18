@@ -6,6 +6,9 @@
 
 }
 
+.cont {
+  width:500px;
+}
 /*.login-form > input {
   font-size:13px;
   display:block;

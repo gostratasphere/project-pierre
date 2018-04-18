@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
+import { Form } from 'semantic-ui-react';
 
 // eventually move these service consts to Lambda Environment variables
 // that load into the js before html gets sent to the browser
@@ -89,15 +90,12 @@ class NewEvent extends Component {
   }
 
   render() {
-    return (<div className="new-event-form">
-        <label>Name:</label>
-        <input name="event-name" value={this.state.name} onChange={this.handleChange}></input>
-        <label>Description:</label>
-        <textarea type="text" name="event-description" value={this.state.description} maxLength="256" onChange={this.handleChange}></textarea>
-        <label>Date:</label>
-        <DatePicker className='dpicker' selected={this.state.date} onChange={this.handleChange} />
-        <button name="new-event-button" onClick={this.createEvent}>Create Event</button>
-      </div>)
+    return (<Form className="new-event-form">
+        <Form.Input label="Name" name="event-name" value={this.state.name} onChange={this.handleChange}></Form.Input>
+        <Form.TextArea label="Description" type="text" name="event-description" value={this.state.description} maxLength="256" onChange={this.handleChange}></Form.TextArea>
+        <DatePicker label="Date" className='dpicker' selected={this.state.date} onChange={this.handleChange} />
+        <Form.Button name="new-event-button" onClick={this.createEvent}>Create Event</Form.Button>
+      </Form>)
   }
 }
 
