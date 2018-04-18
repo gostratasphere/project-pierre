@@ -14,10 +14,6 @@ class EventCard extends Component {
 		}
 	}
 
-	componentDidMount(){
-
-	}
-
 	render(){
 		return (
 			<Card centered>

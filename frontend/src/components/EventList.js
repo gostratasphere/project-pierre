@@ -11,7 +11,7 @@ class EventList extends Component {
 
   componentDidMount(){
   	fetch('https://ro5psc7sm7.execute-api.us-east-1.amazonaws.com/dev/events').then( d => {
-  		d.json().then(res=>{
+  		d.json().then(res => {
   			console.log(res.data.Items)
   			this.setState((prevState, props) => {
   				res.data.Items.map(i => {

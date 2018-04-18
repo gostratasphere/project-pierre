@@ -13,6 +13,9 @@ export default class NavBar extends Component {
     if (name === 'events') {
       window.location.href = '/events';
     } 
+    if (name === 'new-event') {
+      window.location.href = '/new-event'
+    }
   }
 
   render() {
@@ -22,6 +25,7 @@ export default class NavBar extends Component {
       <Menu inverted fixed='top'>
         <Menu.Item name='login' active={activeItem === 'login'} onClick={this.handleItemClick} />
         <Menu.Item name='events' active={activeItem === 'events'} onClick={this.handleItemClick} />
+        <Menu.Item name='new-event' active={activeItem === 'new-event'} onClick={this.handleItemClick} />
       </Menu>
     )
   }

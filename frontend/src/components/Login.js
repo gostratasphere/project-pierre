@@ -30,7 +30,7 @@ class Login extends Component {
       console.log(this.state.password);
       this.setState({username: '', password: '', message: 'success', messageClass: 'success'});
       // console.log(this.getState('password'))
-    } else {
+    } else { // validation
       console.log('username or password are blank');
       this.setState({message: 'please fill out all fields', messageClass: 'failure'});
     }
