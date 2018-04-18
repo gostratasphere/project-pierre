@@ -56,7 +56,7 @@ class Login extends Component {
   render () {
     return (
       <Grid centered>
-        <Segment basic centered='true'>
+        <Segment basic centered className='cont'>
             <h1><Icon name='user' color='grey' />Login</h1>
             <Input inline size='big' name='username' label='Username' className='loginInput' onChange={this.handleChange} value={this.state.username} />
             <Input inline size='big' name='password' label='Password' className='loginInput' type='password' onChange={this.handleChange} value={this.state.password} />
