@@ -32,9 +32,13 @@ class EventCard extends Component {
 					</Card.Description>
 					
 				</Card.Content>
-			<Button basic color='green'>Administer Event</Button>
+			<Button basic color='green' onClick={this.goToDetailsPage}>Administer Event</Button>
 			</Card>
 			)
+	}
+
+	goToDetailsPage(e, f){
+		console.log('ok', e, f)
 	}
 }
 

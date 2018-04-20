@@ -82,11 +82,13 @@ class NewEvent extends Component {
             console.log(json);
           });
         }
+        // should redirect to list of events? 
         this.setState({name: '', owner: '', description: '', date: null})
       }).catch(err => {
         console.error(err);
       })
     } else {
+      // add UI validation errors
       console.error('must submit all fields');
     }
   }
